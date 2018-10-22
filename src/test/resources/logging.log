@@ -1,0 +1,24 @@
+2018-10-22 12:36:28 INFO  SearchFlightPage:86 - user is on search flight page
+ 2018-10-22 12:37:15 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 12:41:11 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 12:47:35 INFO  SearchFlightPage:82 - user is on search flight page
+ 2018-10-22 12:48:11 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 12:48:16 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 12:49:12 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 12:49:16 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:22:23 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:22:28 INFO  SearchFlightPage:82 - user is on search flight page
+ 2018-10-22 13:23:04 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:24:16 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:24:19 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:24:44 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:24:48 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:25:59 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:26:05 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:27:39 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:27:40 WARN  AnnotationConfigApplicationContext:556 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stepDefinitions': Unsatisfied dependency expressed through field 'searchResultPage'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cleartrip.pageobjects.SearchResultPage' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+ 2018-10-22 13:27:40 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 2018-10-22 13:29:19 INFO  KotlinDetector:57 - Kotlin reflection implementation not found at runtime, related features won't be available.
+ 2018-10-22 13:29:24 INFO  SearchFlightPage:82 - user is on search flight page
+ 2018-10-22 13:30:09 WARN  SerenityBackend:40 - It looks like you are running a feature using @RunWith(Cucumber.class) instead of @RunWith(CucumberWithSerenity.class). Are you sure this is what you meant to do?
+ 
