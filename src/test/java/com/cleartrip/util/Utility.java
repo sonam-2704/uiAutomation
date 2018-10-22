@@ -78,11 +78,12 @@ public class Utility {
 
 	public static Map<String,Map<String,String>> getDataMap(String sheetName){
 
-		if(sheet==null){
+		/*if(sheet==null){
 
 			loadExcel(sheetName);
-		}
+		}*/
 
+		loadExcel(sheetName);
 		Map<String,String> myMap = new HashMap<String,String>();
 		Map<String,Map<String,String>> superMap = new HashMap<String,Map<String,String>>();
 
@@ -134,12 +135,12 @@ public class Utility {
 		if(scenario.getName().contains("One-way")){
 
 			value = Utility.getValue("One-way",key);
-			System.out.println("value from Excel : "+value);
+			System.out.println("value from Excel for one way: "+value);
 		}
 		else if(scenario.getName().contains("Round-trip")){
 			
 			value = Utility.getValue("Round-trip",key);
-			System.out.println("value from Excel : "+value);
+			System.out.println("value from Excel for round trip: "+value);
 		}
 
 		return value;

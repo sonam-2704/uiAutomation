@@ -17,6 +17,7 @@ import com.cleartrip.testBase.TestBase;
 import com.cleartrip.util.Utility;
 
 import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -115,4 +116,10 @@ public class StepDefinitions extends TestBase{
 		searchResultPage.verifyListOfFlight();
 	}
 	
+	/*@After
+	public void closeBrowser(){
+		
+		tearDown();
+		
+	}*/
 }

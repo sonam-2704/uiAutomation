@@ -24,7 +24,7 @@ public class TestNGListener extends TestBase implements ITestListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//tearDown();
+		tearDown();
 		System.out.println("methodName:::" + methodName);
 	}
 
@@ -36,7 +36,7 @@ public class TestNGListener extends TestBase implements ITestListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//tearDown();
+		tearDown();
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -52,7 +52,7 @@ public class TestNGListener extends TestBase implements ITestListener {
 	}
 
 	public void onFinish(ITestContext context) {
-		tearDown();
+		//tearDown();
 	}
 
 }

@@ -6,9 +6,8 @@
         "before": [
           {
             "result": {
-              "duration": 9105973070,
-              "error_message": "java.lang.NullPointerException\r\n\tat com.cleartrip.stepdefinitions.StepDefinitions.before(StepDefinitions.java:49)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:34)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:13)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:30)\r\n\tat cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)\r\n\tat cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:222)\r\n\tat cucumber.runtime.Runtime.runHooks(Runtime.java:210)\r\n\tat cucumber.runtime.Runtime.runBeforeHooks(Runtime.java:200)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\r\n\tat cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)\r\n\tat cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)\r\n\tat cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)\r\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:583)\r\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)\r\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)\r\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)\r\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)\r\n\tat org.testng.TestRunner.privateRun(TestRunner.java:648)\r\n\tat org.testng.TestRunner.run(TestRunner.java:505)\r\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:455)\r\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)\r\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)\r\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:364)\r\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\r\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)\r\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)\r\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1137)\r\n\tat org.testng.TestNG.runSuites(TestNG.java:1049)\r\n\tat org.testng.TestNG.run(TestNG.java:1017)\r\n\tat org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)\r\n\tat org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)\r\n\tat org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)\r\n",
-              "status": "failed"
+              "duration": 11657881502,
+              "status": "passed"
             },
             "match": {
               "location": "StepDefinitions.before(Scenario)"
@@ -24,7 +23,8 @@
         "steps": [
           {
             "result": {
-              "status": "skipped"
+              "duration": 130971719,
+              "status": "passed"
             },
             "comments": [
               {
@@ -41,7 +41,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10108771874,
+              "status": "passed"
             },
             "line": 7,
             "name": "user click on \"One way\" button",
@@ -58,7 +59,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4911295018,
+              "status": "passed"
             },
             "line": 8,
             "name": "user enter \"From\" location",
@@ -75,7 +77,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4160233450,
+              "status": "passed"
             },
             "line": 9,
             "name": "user enter \"To\" location",
@@ -92,7 +95,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5891597022,
+              "status": "passed"
             },
             "line": 10,
             "name": "user select \"Depart On\" date",
@@ -109,7 +113,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 118760388,
+              "status": "passed"
             },
             "line": 11,
             "name": "user select \"Adults\" dropdown",
@@ -126,7 +131,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 111479881,
+              "status": "passed"
             },
             "line": 12,
             "name": "user select \"Children\" dropdown",
@@ -143,7 +149,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 140176753,
+              "status": "passed"
             },
             "line": 13,
             "name": "user select \"Infants\" dropdown",
@@ -160,7 +167,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10276602621,
+              "status": "passed"
             },
             "line": 14,
             "name": "user click on \"Search\" button",
@@ -177,7 +185,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 62384979,
+              "status": "passed"
             },
             "line": 15,
             "name": "user verify the searched flight",
