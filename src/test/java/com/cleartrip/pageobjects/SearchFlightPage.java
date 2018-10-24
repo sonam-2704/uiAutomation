@@ -25,9 +25,8 @@ import com.cleartrip.testBase.TestBase;
 
 @Component("searchFlightPage")
 public class SearchFlightPage extends TestBase{
-
-	private  static Logger logger = Logger.getLogger(SearchFlightPage.class);
 	
+	private  static Logger logger = Logger.getLogger(SearchFlightPage.class);
 
 	@FindBy(xpath ="//input[@id='SearchBtn']")
 	public WebElement searchButton;
@@ -65,18 +64,16 @@ public class SearchFlightPage extends TestBase{
 	@FindBy(xpath ="//select[@id='Infants']")
 	public WebElement infantsDropDown;
 
-	/*public SearchFlightPage(WebDriver driver){
-
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}*/
-
-
 	public void initializePage(WebDriver driver){
 
-		PageFactory.initElements(driver, SearchFlightPage.class);
+		PageFactory.initElements(driver, this);
 	}
 
+	/**
+	 * Method to verify cleartrip home page
+	 *
+	 */
+	
 	public void verifySearchPage(){
 		assertTrue(searchFlightHeader.isDisplayed());
 		logger.info("user is on search flight page");

@@ -30,6 +30,11 @@ public class TestBase {
 	public static WebDriver driver;
 	public Scenario scenario;
 
+	/**
+	 * Method to select browser type and initialize driver
+	 *
+	 */
+
 	public void selectBrowser() {
 
 		utility = new Utility();
@@ -45,41 +50,62 @@ public class TestBase {
 		}
 	}
 
+	/**
+	 * Method to launch application
+	 *
+	 */
+
 	public void openApp() {
 
 		driver.get(prop.getProperty("url"));
 	}
 
-	public String getValueFromProperiesFile(String key){
-		
+	/**
+	 * Method to get value from config.properties file for specific key
+	 *
+	 */
+
+	public String getValueFromProperiesFile(String key) {
+
 		utility = new Utility();
 		prop = utility.getProperties();
-		
+
 		return prop.getProperty(key);
-		
+
 	}
-	
-	protected Response  apiInitialSetUp(){
-		
+
+	/**
+	 * Method to return Response object for API validation
+	 *
+	 */
+
+	protected Response apiInitialSetUp() {
 
 		String baseUrl = getValueFromProperiesFile("baseUrl");
 		String methodUrl = getValueFromProperiesFile("methodUrl");
-		
+
 		RestAssured.baseURI = baseUrl;
 		RequestSpecification httpRequest = RestAssured.given();
 		Response response = httpRequest.request(Method.GET, methodUrl);
-		
+
 		return response;
 	}
-	
-	
-	// Explicit Wait for element till element visible on screen
+
+	/**
+	 * Method for Explicit Wait for element till element visible on screen
+	 *
+	 */
+
 	protected void waitForVisible(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
-	// Get screenshot method
+	/**
+	 * Method to take screenshot
+	 *
+	 */
+
 	protected void takeScreenShot(String methodName) throws IOException {
 		File file = new File("testresults");
 		file.getAbsolutePath();
@@ -89,11 +115,14 @@ public class TestBase {
 		FileUtils.copyFile(scrFile, desFile);
 	}
 
+	/**
+	 * Method to close browser
+	 *
+	 */
+
 	protected void tearDown() {
 
 		driver.quit();
 	}
-	
-	
 
 }
