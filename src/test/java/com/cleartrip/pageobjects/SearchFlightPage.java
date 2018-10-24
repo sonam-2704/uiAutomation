@@ -85,7 +85,6 @@ public class SearchFlightPage extends TestBase{
 
 	public void selectButton(String buttonName){
 
-		System.out.println("buttonName: "+buttonName);
 		if (buttonName.equalsIgnoreCase("Search")) {
 			assertTrue(searchButton.isEnabled());
 			searchButton.click();
@@ -108,7 +107,6 @@ public class SearchFlightPage extends TestBase{
 
 	public void enterLocation(String location,String locationValue){
 
-		System.out.println(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		if(location.equalsIgnoreCase("From")){
@@ -165,10 +163,6 @@ public class SearchFlightPage extends TestBase{
 	}
 
 	public void selectValueFromDropDown(String dropdownType,String dropdownValue){
-
-		System.out.println("dropdownType : "+dropdownType);
-
-		System.out.println("dropdownValue : "+dropdownValue);
 
 		if(dropdownType.equalsIgnoreCase("Adults")){
 

@@ -2,8 +2,7 @@
 Feature: Flight Search functionality
 
   Scenario: Search flights One-way
-    #Given user navigates to cleartrip site
-    Then user verify search flight page
+    Given user navigates to cleartrip site and verify search flight page
     When user click on "One way" button
     When user enter "From" location
  		When user enter "To" location	
@@ -15,8 +14,7 @@ Feature: Flight Search functionality
  		Then user verify the searched flight
  			 
  	Scenario: Search flights Round-trip
-    #Given user navigates to cleartrip site
-    Then user verify search flight page
+   Given user navigates to cleartrip site and verify search flight page
     When user click on "Round Trip" button
     When user enter "From" location
  		When user enter "To" location	
@@ -27,4 +25,5 @@ Feature: Flight Search functionality
  		When user select "Infants" dropdown	
  		When user click on "Search" button
  		Then user verify the searched flight
+ 		
  		

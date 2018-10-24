@@ -16,27 +16,25 @@ public class TestNGListener extends TestBase implements ITestListener {
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		System.out.println("Driver in onTestSuccess : "+driver);
-		String methodName = result.getName().toString().trim();
-		System.out.println("methodName:::" + methodName);
+	/*	String methodName = result.getName().toString().trim();
+		//System.out.println("methodName:::" + methodName);
 		try {
 			takeScreenShot(methodName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		tearDown();
-		System.out.println("methodName:::" + methodName);
+		tearDown();*/
 	}
 
 	public void onTestFailure(ITestResult result) {
 		String methodName =result.getName().toString().trim();
-		System.out.println("methodName:::" + methodName);
+		//System.out.println("methodName:::" + methodName);
 		try {
 			takeScreenShot(methodName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		tearDown();
+		//tearDown();
 	}
 
 	public void onTestSkipped(ITestResult result) {

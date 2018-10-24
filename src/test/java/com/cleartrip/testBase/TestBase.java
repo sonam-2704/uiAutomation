@@ -17,6 +17,10 @@ import org.springframework.stereotype.Component;
 import com.cleartrip.util.Utility;
 
 import cucumber.api.Scenario;
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 @Component
 public class TestBase {
@@ -29,7 +33,7 @@ public class TestBase {
 	public void selectBrowser() {
 
 		utility = new Utility();
-		init();
+		prop = utility.getProperties();
 		String browser = prop.getProperty("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
 
@@ -43,15 +47,32 @@ public class TestBase {
 
 	public void openApp() {
 
-		System.out.println("==============");
-		System.out.println(driver);
 		driver.get(prop.getProperty("url"));
 	}
 
-	public void init() {
+	public String getValueFromProperiesFile(String key){
+		
+		utility = new Utility();
 		prop = utility.getProperties();
+		
+		return prop.getProperty(key);
+		
 	}
+	
+	protected Response  apiInitialSetUp(){
+		
 
+		String baseUrl = getValueFromProperiesFile("baseUrl");
+		String methodUrl = getValueFromProperiesFile("methodUrl");
+		
+		RestAssured.baseURI = baseUrl;
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response = httpRequest.request(Method.GET, methodUrl);
+		
+		return response;
+	}
+	
+	
 	// Explicit Wait for element till element visible on screen
 	protected void waitForVisible(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
@@ -63,7 +84,6 @@ public class TestBase {
 		File file = new File("testresults");
 		file.getAbsolutePath();
 		String screenShotName = methodName + ".png";
-		System.out.println("Diriver before screenshot:--" + driver);
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File desFile = new File("./testresults/" + screenShotName);
 		FileUtils.copyFile(scrFile, desFile);
@@ -71,8 +91,9 @@ public class TestBase {
 
 	protected void tearDown() {
 
-		System.out.println("driver: " + driver);
 		driver.quit();
 	}
+	
+	
 
 }

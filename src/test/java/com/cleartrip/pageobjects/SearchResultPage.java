@@ -12,8 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.stereotype.Component;
 
-import com.cleartrip.helper.LoggerHelper;
-
 /**
  * @author Sonam_Mittal
  *
@@ -32,8 +30,6 @@ public class SearchResultPage {
 
 
 	public void verifyListOfFlight() {
-		//logger.info("list of flights:::"+listOfFlights.size());
-		System.out.println(listOfFlights.size());
 		Assert.assertThat(listOfFlights.size(), Matchers.greaterThan(0));
 	}
 

@@ -55,8 +55,8 @@ public class Utility {
 		}
 
 		return prop;
-	}
-
+	}	
+	
 	public static void loadExcel(String sheetName){
 
 		File file = new File(EXCELFILELOCATION);
@@ -135,22 +135,13 @@ public class Utility {
 		if(scenario.getName().contains("One-way")){
 
 			value = Utility.getValue("One-way",key);
-			System.out.println("value from Excel for one way: "+value);
 		}
 		else if(scenario.getName().contains("Round-trip")){
 			
 			value = Utility.getValue("Round-trip",key);
-			System.out.println("value from Excel for round trip: "+value);
 		}
 
 		return value;
 	}
 
-	/*public static void main(String args[]){
-
-		//getProperties();
-		System.out.println(getValue("One-way","From"));
-		System.out.println(getValue("One-way","To"));
-		
-	}*/
 }

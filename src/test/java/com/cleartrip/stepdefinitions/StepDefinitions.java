@@ -10,6 +10,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
+import com.cleartrip.api.APIValidation;
 import com.cleartrip.config.ContextConfiguration;
 import com.cleartrip.pageobjects.SearchFlightPage;
 import com.cleartrip.pageobjects.SearchResultPage;
@@ -44,30 +45,20 @@ public class StepDefinitions extends TestBase{
 		this.scenario = scenario;
 		selectBrowser();
 		
-		ApplicationContext context= new AnnotationConfigApplicationContext(ContextConfiguration.class);
 		openApp();
-		//System.out.println("driver in stepdefinition:" + driver);
-		//System.out.println("searchPage in stepdefinition:" + searchFlightPage);
 		//searchFlightPage.initializePage(driver);
 		searchFlightPage=PageFactory.initElements(driver, SearchFlightPage.class);
 		searchResultPage=PageFactory.initElements(driver, SearchResultPage.class);
 	}
 
-	@Given("^user navigates to cleartrip site$")
-	public void openBrowser(){
+	@Given("^user navigates to cleartrip site and verify search flight page$")
+	public void verifyCleartripHomePage(){
 
-		/*selectBrowser();
-		openApp();
-		System.out.println("Inside cleartrip site");
-		System.out.println("driver in stepdefinition:" + driver);
-		System.out.println("searchPage in stepdefinition:" + searchPage);
-		searchPage.initializePage(driver);*/
-
+		searchFlightPage.verifySearchPage();
 	}
-
+	
 	@Then("^user verify search flight page$")
 	public void verifyHomePageOfApp() throws InterruptedException{
-		//SearchFlightPage searchPage = PageFactory.initElements(driver, SearchFlightPage.class);;
 		searchFlightPage.verifySearchPage();
 		
 	}
@@ -75,14 +66,11 @@ public class StepDefinitions extends TestBase{
 	@When("^user click on \"([^\"]*)\" button$")
 	public void selectButton(String buttonName){
 
-	//	SearchFlightPage searchPage = PageFactory.initElements(driver, SearchFlightPage.class);
 		searchFlightPage.selectButton(buttonName);
 	}
 
 	@When("^user enter \"([^\"]*)\" location$")
 	public void enterLocation(String location){
-
-		//SearchFlightPage searchPage = PageFactory.initElements(driver, SearchFlightPage.class);;
 
 		String locationValue  = Utility.getValueFromExcel(scenario,location);
 
@@ -92,8 +80,6 @@ public class StepDefinitions extends TestBase{
 	@When("^user select \"([^\"]*)\" date$")
 	public void enterDate(String dateType){
 
-		//SearchFlightPage searchPage = PageFactory.initElements(driver, SearchFlightPage.class);;
-
 		String dateValue  = Utility.getValueFromExcel(scenario,dateType);
 
 		searchFlightPage.selectDateFromCalendar(dateType,dateValue);
@@ -101,8 +87,6 @@ public class StepDefinitions extends TestBase{
 
 	@When("^user select \"([^\"]*)\" dropdown$")
 	public void selectDropDown(String dropdownType){
-
-		//SearchFlightPage searchPage = PageFactory.initElements(driver, SearchFlightPage.class);;
 
 		String dropdownValue  = Utility.getValueFromExcel(scenario,dropdownType);
 
@@ -112,14 +96,13 @@ public class StepDefinitions extends TestBase{
 	@Then("^user verify the searched flight$")
 	public void verifySearchedFlight(){
 
-	//	SearchResultPage searchResultPage = PageFactory.initElements(driver, SearchResultPage.class);;
 		searchResultPage.verifyListOfFlight();
 	}
 	
-	/*@After
+	@After
 	public void closeBrowser(){
 		
 		tearDown();
 		
-	}*/
+	}
 }
