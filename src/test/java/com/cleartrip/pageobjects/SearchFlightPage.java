@@ -95,11 +95,6 @@ public class SearchFlightPage extends TestBase{
 			roundTripButton.click();
 		}
 
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public void enterLocation(String location,String locationValue){
@@ -114,11 +109,7 @@ public class SearchFlightPage extends TestBase{
 			fromField.sendKeys(locationValue);
 			act.sendKeys(Keys.ARROW_DOWN).build().perform();
 
-			try {
-				Thread.sleep(4000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		
 		}
 		else if(location.equalsIgnoreCase("To")){
 
@@ -128,11 +119,7 @@ public class SearchFlightPage extends TestBase{
 			toField.sendKeys(locationValue);
 			act.sendKeys(Keys.ARROW_DOWN).build().perform();
 
-			try {
-				Thread.sleep(4000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			
 		}
 
 	}
@@ -151,11 +138,7 @@ public class SearchFlightPage extends TestBase{
 			returnDate.sendKeys(dateValue);
 		}
 		searchFlightHeader.click();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+	
 
 	}
 
@@ -167,7 +150,7 @@ public class SearchFlightPage extends TestBase{
 
 			select.selectByValue(dropdownValue);
 
-
+			
 		}
 		else if(dropdownType.equalsIgnoreCase("Children")){
 
