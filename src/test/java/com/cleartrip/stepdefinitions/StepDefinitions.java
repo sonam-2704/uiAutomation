@@ -1,8 +1,6 @@
 package com.cleartrip.stepdefinitions;
 
-import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.core.env.Environment;
@@ -43,6 +41,7 @@ public class StepDefinitions extends TestBase {
 		selectBrowser();
 
 		openApp();
+		@SuppressWarnings("resource")
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(ContextConfiguration.class);
 		searchFlightPage = context.getBean(SearchFlightPage.class);
 		searchFlightPage.initializePage(driver);

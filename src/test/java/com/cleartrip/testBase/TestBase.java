@@ -2,6 +2,8 @@ package com.cleartrip.testBase;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -10,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
@@ -17,6 +20,7 @@ import org.springframework.stereotype.Component;
 import com.cleartrip.util.Utility;
 
 import cucumber.api.Scenario;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
@@ -42,9 +46,22 @@ public class TestBase {
 		String browser = prop.getProperty("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe");
-			driver = new ChromeDriver();
+			// Create object of HashMap Class
+			Map<String, Object> prefs = new HashMap<String, Object>();
+
+			// Set the notification setting it will override the default setting
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+
+			// Create object of ChromeOption class
+			ChromeOptions options = new ChromeOptions();
+
+			// Set the experimental option
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("disable-infobars");
+			
+			WebDriverManager.chromedriver().setup();
+			//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe");
+			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 
 		}
